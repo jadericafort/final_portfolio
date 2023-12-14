@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>About Me</title>
+<style>
+html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body and General Styling */
+body {
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: black;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* Header Styling */
+header {
+    background-color: black;
+    margin: 10px;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    width: 100%;
+}
+
+/* Navigation */
+nav {
+    margin: 10px;
+    color: white;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 30px;
+    background-color: #FF69B4;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    margin: 30px;
+    color: white;
+}
+
+nav ul li a:hover {
+    width: 100%;
+    padding: 50px;
+    background-color: #FF1493;
+}
+
+/* Container Styling */
+.container {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    position: relative;
+    padding: 12px;
+    z-index: 1;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.profile-img {
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover; 
+}
+
+.bruh {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+/* Words Styling */
+.words {
+        color: #FF1493;
+        text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black; 
+}
+.words2 {
+
+        color: white;
+        text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black; 
+}
+.words3 {
+        margin-top: 1px;
+        color: white;
+        text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black; 
+}
+.words4 {
+        color: white;
+        text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black; 
+}
+
+/* Education Background */
+.edu-background {
+    background-color: lightblue;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: black;
+    text-align: left;
+    border: 3px solid black;
+}
+
+/* Experience and Skills */
+.exp-skills,
+.organizations {
+    padding: 38px;
+    margin-bottom: 40px;
+    text-align: left;
+    border: 5px solid white;
+}
+
+.exp-skills {
+    color: black;
+    background-color: pink;
+    width: 91%;
+}
+
+.organizations {
+    color: white;
+    background-color: purple;
+    width: 91%;
+    font-size: 0.9em;
+}
+
+/* Video Background */
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+    margin: 0;
+    padding: 0;
+}
+
+#video-background iframe {
+    width: 100vw;
+    height: 56.25vw; 
+    min-height: 100vh;
+    min-width: 177.78vh; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Media Query for Responsive Design */
+@media screen and (max-width: 1000px) {
+    #video-background iframe {
+        width: 200vw; 
+        height: 200vw;
+        min-height: 100vh; 
+        min-width: 200vh; 
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Video Containers */
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Hover Effect for Videos */
+.video-img {
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.video-img:hover {
+    transform: scale(1.1);
+}
+
+/* Center Container */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+/* Grid Container */
+.grid-container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* Table Styling */
+.table {
+    background-color: black;
+    color: white;
+    width: 90%;
+    border-collapse: collapse;
+    border: 5px solid white;
+    margin: 0 auto;
+}
+
+.table th,
+.table td {
+    border: 1px solid white;
+    padding: 10px;
+    width: 30%;
+}
+
+.table th {
+    background-color: black;
+}
+
+/* Contact Section */
+.contacts {
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.contact-links a {
+    margin: 0 20px;
+}
+
+/* About Section */
+.about-container {
+    background-image: url('https://i.pinimg.com/564x/ec/f0/5b/ecf05b02fbdcfb98dbb3ea40f3b9fec5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-me-img {
+    width: 350px;
+    height: 500px;
+    margin-right: 20px;
+}
+
+.about-me-text {
+    flex: 1;
+    color: black;
+    text-align: justify;
+    font-weight: italic;
+}
+
+/* Photo Grid */
+.photo-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 1px;
+}
+
+.photo-grid iframe {
+    width: 83%;
+    height: 100%;
+    aspect-ratio: 16/9;
+    min-height: 100vh;
+}
+
+/* Code */
+.caption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 15px;
+    width: 100%;
+}
+
+.code iframe {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+    min-height: 100vh;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #4B0082;
+    color: white;
+    text-align: center;
+    position: relative;
+    margin: 0;
+    align-items: center;
+    padding: 15px;
+    font-size: 1.5em;
+    width: 100%;
+}
+
+
+</style>
+</head>
+<body>
+<div id="video-background">
+    <iframe
+      src="https://www.youtube.com/embed/eTD0WWFIDAg?autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playlist=eTD0WWFIDAg"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+</div>
+
+
+<header>	
+    <h1>&#128150;About Me&#128150;</h1>
+</header>
+
+<nav>
+    		<ul><h3>
+        		<li><a href="Homepage.html">Home</a></li>
+        		<li><a href="About me.html">About Me</a></li>
+        		<li><a href="https://www.tiktok.com/@strikersmileyjade">Tiktok</a></li>
+        		<li><a href="https://www.facebook.com/Jade.Ricafort6">Facebook</a></li>
+    		</h3></ul>
+</nav>
+
+<br>
+
+<div class="container">
+    <img class="profile-img" src="https://media.licdn.com/dms/image/D562DAQEccDV7hyw7_Q/profile-treasury-image-shrink_1920_1920/0/1700886029396?e=1702648800&v=beta&t=eXGCZfOHnVGeH2nKQ68ogGqa6i_ga8jvJxvorqVZKqk" alt="Your Name""width="200" height="200">
+    
+<div class="words">
+<h1>I am <span id="changing-word">College Student</span></h1>
+</div>
+<br>
+
+<div class="about-container">
+       <div class="about-me">
+           <img class="about-me-img" src="https://media.licdn.com/dms/image/D562DAQFv05t9b7lF-Q/profile-treasury-image-shrink_1280_1280/0/1698200983966?e=1702699200&v=beta&t=KH8Q5ou7dt-fx_1lFM6zw_VndkgM_V1Mi-3v-esWl_I" alt="me">
+        
+</div>
+
+<br>
+<div class="about-me-text">
+            <p style="text-indent: 30px;">Hello, my name is Rosella Jade Asetre Ricafort. You can call me Jade or Rosella. Yes, I edit pictures and videos. This skill developed during the pandemic. I watched tutorials from TikTok and YouTube. After honing those skills, I put them to the test by uploading my own tutorials on TikTok and sharing my videos through my social media platforms.
+
+<br>
+<br>
+
+<p style="text-indent: 30px;">My journey with coding began when I was a grade school student. My first experience was using Notepad and creating HTML. I found it enjoyable. I crafted my own website, experimenting with different backgrounds, including colors, images, and videos. I developed a passion for website design through this experience, which led me to pursue a course in computer science. I aspire to enhance my knowledge and skills further. I am eager to expand beyond website creation, delving into app and game development. My introduction to Python occurred during my work immersion at Ateneo de Naga University in senior high school (grade 12). As a college student, I am now learning C++, JavaScript, and deepening my understanding of HTML. My dream is to become a software developer, web developer, app developer, or game developer.
+
+<br>
+<br>
+
+<h2>My Motto:</h2>
+<center><h3><u>"Anyone Can Achieve Their Dreams, If They Have The Courage To Pursue Them."</u></h3></center>
+
+</p>
+</div>
+</div>
+<br>
+
+<div class="edu-background section">
+
+<h2>Educational Background&#127891;</h2>
+
+<hr style="border-color: black;">
+
+<img class="section-img" src="https://scontent.fceb2-1.fna.fbcdn.net/v/t39.30808-6/299105224_457370476401566_5702291961737457690_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeFn8zOtzdcUxGhosLnOT-HaOPzLJHUQQpk4_MskdRBCmSQ0pTHcuh4Bsjsvq3X6J1vJpgkjnLfAmH2Dp1rsgpU0&_nc_ohc=VSEc2m52zwUAX9cYnJW&_nc_ht=scontent.fceb2-1.fna&oh=00_AfAfnWkjfXolxqsWrm-cHHcFXCLENQAr11x-FynXMECkaA&oe=65782019""width="200" height="200" alt="Educational Background">
+
+<img class="section-img" src="https://scontent.fcrk4-1.fna.fbcdn.net/v/t39.30808-6/304848816_573517461228097_30559642462958363_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=783fdb&_nc_eui2=AeHY4nVvSXz3B4grXqocYyVg354tLW78dMLfni0tbvx0wqLbuvMDZkzoZKW4kLBqfXbR6whJ91Nm8FwjoXw9lxhf&_nc_ohc=F_zzrVZ7wVoAX9lkWDc&_nc_ht=scontent.fcrk4-1.fna&oh=00_AfBq12EAZZn9q6v81sPPxgGCtlfz5FiqKbxnTD81l5aU4w&oe=6579BFEC""width="200" height="200" alt="Educational Background">
+        
+        <p>
+            <h4>Graduated Elementary at St. Paul Academy of Goa in 2017</h4>
+            <h5>Received Awards:</h5>
+            <ul>
+                <li>With honors from Gr. 1-3</li>
+                <li>Best in Performance from Gr. 4-6</li>
+                <li>Best in Choir from Gr. 5-6</li>
+            </ul>
+
+            <h4>Graduated Junior Highschool at St. Paul Academy of Goa in 2021</h4>
+            <h5>Received Awards:</h5>
+            <ul>
+                <li>With honors Gr. 7-10</li>
+                <li>7th Place in Math on Private Schools Day Gr. 9</li>
+                <li>Social Service Award Gr. 8</li>
+            </ul>
+<br>
+<hr style="border-color: black;">
+
+<img class="section-img" src="https://upload.wikimedia.org/wikipedia/en/e/e2/Ateneo_de_Naga_University_logo.png""width="200" height="200" alt="Educational Background">
+<img class="section-img" src="https://connect-assets.prosple.com/cdn/ff/eJu_6q9JD7F79ROqWO0c_186KU_tb6dIbWHqLXyG1ck/1674210052/public/styles/scale_and_crop_center_890x320/public/2023-01/ateneodenaga-banner-1786x642.jpg?itok=oNejbYDa""width="200" height="200" alt="Educational Background">
+            <h4>Graduated Senior Highschool at Ateneo de Naga University in 2023</h4>
+            <h5>Received Awards:</h5>
+            <ul>
+                <li>3rd Place Folk Dance Competition</li>
+                <li>1st Place Balikbayan Project Festival Dance Competition</li>
+            </ul>
+<br>
+<hr style="border-color: black;">
+            <h4><strong>Still studying College of Computer Science at Ateneo de Naga University 2023-2024 (Present Year)</strong></h4></p>
+    </div>
+<div class="container2">
+    <div class="exp-skills section">
+     <h2>My Experiences and Skills</h2>
+        <p><ul>
+                <li>Can edit videos/pictures using both mobile/PC:</li>
+                <ul>
+                    <li>Mobile</li>
+                    <ul>
+                        <li>Capcut</li>
+                        <li>Alightmotion</li>
+                        <li>Picsart</li>
+                        <li>Filmora Go</li>
+
+                    </ul>
+                    <li>Computer</li>
+                    <ul>
+                        <li>Wondershare Filmora</li>
+                    </ul>
+                </ul>
+                <li>Can do simple coding using:</li>
+                <ul>
+                    <li>C++</li>
+                    <li>Python</li>
+                    <li>HTML</li>
+		    <li>JavaScript</li>
+                </ul>
+                <li>Additional Abilities:</li>
+                <ul>
+                    <li>Can work on tasks efficiently</li>
+                    <li>Can create and design websites</li>
+                </ul>
+            </ul></p>
+<br>
+<div class="images">
+        <img src="https://play-lh.googleusercontent.com/MO4jVMbqskWrBD7BDUiKkymLPDMlSFjnEE-JTCigWv6UcoENgAkSKr8bs0IvPs8Twv8=w240-h480-rw" alt="Image 1"width="100" height="100" >
+
+        <img src="https://play-lh.googleusercontent.com/1JMJ518jogwPeaD0pYn2mBu1cRLD0xRi45wNbtTIRvam1_xx-y3KJOjRAx-W9P4Lf0U" alt="Image 2"width="100" height="100" >
+
+        <img src="https://play-lh.googleusercontent.com/OU0BlP8C9-V7ECl2crma7B48nzDbK7liSLjn0j_fpTlyWG6qyEE-mw_KFZ9aOXF0a3w" alt="Image 3"width="100" height="100" >
+
+        <img src="https://play-lh.googleusercontent.com/n5ch7V_kO_PrgH73QT6gLuo7BIP7KXQeaMPa4ueeg9tTWkH8NNdd2hAdTbRGmwL1RA=w240-h480-rw" alt="Image 4"width="100" height="100" >
+
+<img src="https://www.shutterstock.com/image-vector/emblem-c-plus-programming-language-600nw-1669056601.jpg" alt="Image 5"width="100" height="100" >
+
+<img src="https://e0.pxfuel.com/wallpapers/693/944/desktop-wallpaper-python-logo-laptop-full-background-and-python-coding.jpg" alt="Image 6"width="100" height="100" >
+
+<img src="https://banner2.cleanpng.com/20180417/ite/kisspng-web-development-javascript-logo-java-plum-5ad58e75bc9174.9127947515239450777724.jpg" alt="Image 7"width="100" height="100" >
+
+<img src="https://www.computerhope.com/jargon/h/html.png" alt="Image 8"width="100" height="100" >
+
+<br>
+</div>
+ </div>
+
+<div class="organizations">
+        <h2>Organizations</h2>
+<ul>
+
+                <h3><li>TACTICS - 1st Year Representative</li></h3>
+<br>
+<img src="https://scontent.fmnl9-2.fna.fbcdn.net/v/t39.30808-6/329249742_1854869591535635_7765422013111044144_n.png?stp=dst-jpg&_nc_cat=103&ccb=1-7&_nc_sid=9534ce&_nc_eui2=AeFZsWwGDgJGcj-bj_Z7jM6JuyeA5uwLWh67J4Dm7AtaHqaoR2IicLUV8L_raPEvYx9HNsx9Yv-9Hl3NTmrlfcaH&_nc_ohc=6jRZuYBQwKUAX_U1Dp4&_nc_ht=scontent.fmnl9-2.fna&oh=00_AfByPFheH3wwcmbnTCkJObJS8fN7QuImw4AcMRB7MRqWTg&oe=6579B1D6" alt="Image 5"width="650" height="200" >
+
+<br>
+                <h3><li>Golden Galiants - Team Captain of FML Team in Mobile Legends</li></h3>
+<br>
+
+<img src="https://scontent.fmnl9-4.fna.fbcdn.net/v/t39.30808-6/306226434_124076430395809_8925981348332833094_n.png?_nc_cat=106&ccb=1-7&_nc_sid=783fdb&_nc_eui2=AeH48drcERYOwnRIQGbhguj3uUMjXW2fhoe5QyNdbZ-Gh7bxCza4kpJ0c24Zw6cQTAFVIw3VngSmA6sKN6xQUR8P&_nc_ohc=Gmtf8wr4AjoAX-nNFME&_nc_ht=scontent.fmnl9-4.fna&oh=00_AfBouFDvx8_bSB9LPOrKYgy3gh_-iI-xlh40ggXypD690g&oe=65792F72" alt="Image 8"width="550" height="200" >
+<br>
+                <h3><li>Ateneo Film Society - Aspirant</li></h3>
+<br>
+
+<img src="https://scontent.fmnl9-3.fna.fbcdn.net/v/t1.6435-9/34596938_1711120998974380_3081681018185318400_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=300f58&_nc_eui2=AeHTmJsIAGDtq4pYUfs8A61QARvWGozXivQBG9YajNeK9B83NXcOhTT51XuUFQGf_1BG0bHdjnLc78jcnNceIraD&_nc_ohc=aqH7NZ0uFVgAX_mVrQW&_nc_ht=scontent.fmnl9-3.fna&oh=00_AfCctF7Eu8X4EboPAVUEsovMPKWYdDjgWdqE-IoI2pJGsg&oe=659B3D9B" alt="Image 8"width="550" height="200" >
+
+</ul>
+       
+</div>
+ </div>
+
+<div class="table">
+            <h1>Training and Seminars Attended</h1>
+            <table>
+                <tr>
+                    <th>Name of Event</th>
+                    <th>Location</th>
+                    <th>Dates</th>
+                    <th>Role</th>
+                </tr>
+                <tr>
+                    <td>Career Expedition 2022</td>
+                    <td>Ateneo de Naga University</td>
+                    <td>Oct. 21, 2022</td>
+                    <td>Participant</td>
+                </tr>
+                <tr>
+                    <td>Pagdiriwang ng Buwan ng Wikang Pambansa 2021</td>
+                    <td>Ateneo de Naga University</td>
+                    <td>Aug. 13, 2021</td>
+                    <td>Participant</td>
+                </tr>
+                <tr>
+                    <td>Work Immersion</td>
+                    <td>Ateneo de Naga University</td>
+                    <td>Feb. 17, 2023 - March 2, 2023</td>
+                    <td>Intern</td>
+                </tr>
+                <tr>
+                    <td>LA'AD Festival</td>
+                    <td>Ateneo de Naga University</td>
+                    <td>Oct. 23, 2023 - Oct. 26, 2023</td>
+                    <td>Facilitator</td>
+                </tr>
+                <tr>
+                    <td>TicTacTalks</td>
+                    <td>Ateneo de Naga University</td>
+                    <td>Oct. 24, 2023 - Oct. 25, 2023</td>
+                    <td>Facilitator</td>
+                </tr>
+            </table>
+       
+</div>
+
+<br>
+<br>
+
+<div class="bruh-container">
+<div class="words2">
+    <center><h1 class="highlight-text">Some Videos I Edited and Posted on TikTok</h1></center>
+</div>
+
+<div class="grid-container">
+
+       <a class="video-link" href="https://www.tiktok.com/@strikersmileyjade/video/7189822153007598875?is_from_webapp=1&sender_device=pc" target="_blank">
+            <img class="video-img" src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-p-0037-aiso/b89dbd11d4c94257bf3c93485f2def7a_1674010942~tplv-photomode-zoomcover:240:240.jpeg?x-expires=1701068400&x-signature=iXNH6VeBissVmgoDQLbOM63dDrY%3D" alt="tt1"width="300" height="200">
+        </a>
+
+        <a class="video-link" href="https://www.tiktok.com/@strikersmileyjade/video/7189559309229919514?is_from_webapp=1&sender_device=pc" target="_blank">
+            <img class="video-img" src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-p-0037-aiso/2bc7c0489d62478fbb25077cb1ae04f5_1673949743~tplv-photomode-zoomcover:240:240.jpeg?x-expires=1701068400&x-signature=n4blUheBNIiLS5aIdKw%2FJ9v4lnY%3D" alt="tt2"width="300" height="200">
+        </a>
+
+        <a class="video-link" href="https://www.tiktok.com/@strikersmileyjade/video/7088639239663013146?is_from_webapp=1&sender_device=pc" target="_blank">
+            <img class="video-img" src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-p-0037-aiso/981df4d2a44d4ccca9ef293e366c2069_1650452440~tplv-photomode-zoomcover:240:240.jpeg?x-expires=1701068400&x-signature=QgnPDgGXfknRC0OMcmFwvNRiUV4%3D" alt="tt3"width="300" height="200">
+        </a>
+
+<a class="video-link" href="https://www.tiktok.com/@strikersmileyjade/video/7061042255523499290?is_from_webapp=1&sender_device=pc" target="_blank">
+            <img class="video-img" src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-p-0037-aiso/abbcc5bdeff0427a86a4eacfa0bf1f68_1644027017~tplv-photomode-zoomcover:240:240.jpeg?x-expires=1701068400&x-signature=NFp7SzPp%2F4MCcC59aQbCX0P4H30%3D" alt="tt3"width="300" height="200">
+        </a>
+
+<a class="video-link" href="https://www.tiktok.com/@strikersmileyjade/video/7160135385501158683?is_from_webapp=1&sender_device=pc" target="_blank">
+            <img class="video-img" src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-p-0037-aiso/97135172aede460590470f9729186f25_1667098940~tplv-photomode-zoomcover:240:240.jpeg?x-expires=1701068400&x-signature=ilazfjKjJGWDSyRLjyeTAA8%2FvKk%3D" alt="tt3"width="300" height="200">
+        </a>
+
+<a class="video-link" href="https://www.tiktok.com/@strikersmileyjade/video/7176434804349472026?is_from_webapp=1&sender_device=pc" target="_blank">
+            <img class="video-img" src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-p-0037-aiso/ogdspnDEZ989Dp5bCQYX5PjX0WVflARyDIfBAs~tplv-photomode-zoomcover:240:240.jpeg?x-expires=1702216800&x-signature=mcA%2BqsTQfTaWB6X%2BsctuyRb6h2M%3D" alt="tt3"width="300" height="200">
+        </a>
+
+<a class="video-link" href="https://www.tiktok.com/@strikersmileyjade/video/7162501420476861722?is_from_webapp=1&sender_device=pc" target="_blank">
+            <img class="video-img" src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-p-0037-aiso/f035bd3337c1498d9efcd39faadda3e7_1667649832~tplv-photomode-zoomcover:240:240.jpeg?x-expires=1702216800&x-signature=rUG7aYPcEo35zj4SrwBFvNNxkZ0%3D" alt="tt3"width="300" height="200">
+        </a>
+
+<a class="video-link" href="https://www.tiktok.com/@strikersmileyjade/video/7119810484928351514?is_from_webapp=1&sender_device=pc" target="_blank">
+            <img class="video-img" src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-p-0037-aiso/0943f550e96a41fd8349febcedb87fd3_1657710066~tplv-photomode-zoomcover:240:240.jpeg?x-expires=1702216800&x-signature=3gYHraAXvToJWCZCrtuVeYHzK5M%3D" alt="tt3"width="300" height="200">
+        </a>
+
+<a class="video-link" href="https://www.tiktok.com/@strikersmileyjade/video/7082197282111671579?is_from_webapp=1&sender_device=pc" target="_blank">
+            <img class="video-img" src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-p-0037-aiso/563a7d1e73be44aeaaac79e449811e81_1648952559~tplv-photomode-zoomcover:240:240.jpeg?x-expires=1702238400&x-signature=DMY5jiH2ytRqliaeqCv%2BSSo2ldU%3D" alt="tt3"width="300" height="200">
+        </a>
+
+</div>
+</div>
+</div>
+</div>
+
+    <div class="pics section">
+<div class="words3">
+<center><h1 class="highlight-text">A sample of how I edit pics and videos</h1></center>
+<div class="photo-grid">
+<iframe
+  src="https://www.youtube.com/embed/ZcaZ-jIARFc?si=kYBzwBT6jeBIng25&autoplay=1&mute=1&loop=1&controls=0&playlist=ZcaZ-jIARFc"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+></iframe>
+
+
+</div>
+</div>
+
+<br>
+
+
+
+<div class="caption">
+<div class="words4">
+<center><h1 class="highlight-text">Sample of How I Code</h1></center>
+
+<div class="code">
+    <iframe width="913" height="491" src="https://www.youtube.com/embed/HEoxlbkk-dQ?autoplay=1&mute=1&controls=0&loop=1&playlist=HEoxlbkk-dQ" title="hello" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+</div>
+</div>
+
+<br>
+
+<div class="contacts">
+    <h2>Contact Me</h2>
+    <div class="contact-links">
+        <a href="https://www.facebook.com/Jade.Ricafort6">
+            <img src="https://i.pinimg.com/originals/bd/c7/c9/bdc7c9c9d6d07bee87174eaa4920bc5a.png" alt="Facebook" width="50" height="50">
+        </a>
+        <a href="https://www.twitter.com/strikersmiley">
+            <img src="https://i.pinimg.com/564x/1a/f5/70/1af5708f6328a92488036ddd96d75d4d.jpg" alt="Twitter" width="50" height="50">
+        </a>
+        <a href="https://www.instagram.com/jadiellarose">
+            <img src="https://i.pinimg.com/564x/ec/d7/f1/ecd7f1699d1297c01320355e671979f8.jpg" alt="Instagram" width="50" height="50">
+        </a>
+       <a href="https://www.tiktok.com/@strikersmileyjade">
+            <img src="https://i.pinimg.com/564x/03/39/36/033936ccc7495a469d761e20b45f3f9d.jpg" alt="TikTok" width="50" height="50">
+        </a>
+	<a href="https://www.linkedin.com/in/rosella-jade-a-ricafort-169676296">
+            <img src="https://i.pinimg.com/564x/ab/1e/1e/ab1e1e8e0bda863f76755c2e235b2a2d.jpg" alt="Linkedin" width="50" height="50">
+        </a>
+    </div>
+</div>
+
+
+<script>
+	 document.addEventListener("DOMContentLoaded", function() {
+        const words = [" Rosella Jade Asetre Ricafort"," a Programmer", " an Editor", " a Computer Science Student", "a Tiktoker Editor", "an Atenean", "a ML Content Creator"];
+
+        let index = 0;
+        const wordElement = document.getElementById("changing-word");
+
+        let letterIndex = 0;
+        let wordInterval;
+
+        function typeWord() {
+            const word = words[index];
+            wordElement.textContent = ''; 
+            letterIndex = 0; 
+
+            function typeLetter() {
+                const currentText = word.substring(0, letterIndex);
+                wordElement.textContent = currentText;
+                letterIndex++;
+
+                if (letterIndex <= word.length) {
+                    wordInterval = setTimeout(typeLetter, 100); 
+                } else {
+                    setTimeout(eraseWord, 1500); 
+                }
+            }
+
+            typeLetter(); 
+        }
+
+        function eraseWord() {
+            function eraseLetter() {
+                const word = words[index];
+                const currentText = word.substring(0, letterIndex);
+                wordElement.textContent = currentText;
+                letterIndex--;
+
+                if (letterIndex >= 0) {
+                    wordInterval = setTimeout(eraseLetter, 100); 
+                } else {
+                    index = (index + 1) % words.length;
+                    setTimeout(typeWord, 500); 
+                }
+            }
+
+            eraseLetter(); 
+        }
+
+        typeWord(); 
+    });
+</script>
+</div>
+<footer>
+    <p>© 2023 MyWorld.com. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

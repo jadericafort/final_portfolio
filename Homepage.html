@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Welcome to My Profile</title>
+
+<style>
+
+/* Body and General Styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+}
+
+header,
+nav,
+footer,
+.image-header,
+.image-gallery-container,
+.video-background,
+.video-frame {
+    width: 100%;
+    margin: o;
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header and Navigation */
+header,
+nav,
+.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 30px;
+    background-color: #FF69B4;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    margin: 30px;
+    color: white;
+}
+
+nav ul li a:hover {
+    width: 100%;
+    padding: 50px;
+    background-color: #FF1493;
+}
+
+/* Container Styles */
+.container {
+    width: 80%;
+    margin: 15px auto;
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+
+.main-content {
+    width: 70%;
+    background-color: #FFB6C1;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid #C0C0C0;
+    color: black;
+    position: relative;
+    z-index: 1;
+}
+
+.main-content img.main-image {
+    width: 300px;
+    height: 400px;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.main-content figcaption {
+    text-align: left;
+    flex: 1;
+}
+
+.sidebar {
+    width: 30%;
+    background-color: black;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid #C0C0C0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Image with Caption */
+.image-with-caption {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.image-with-caption img.hobby-image {
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.image-with-caption figcaption {
+    text-align: center;
+}
+
+/* Image Gallery Styling */
+.image-gallery img {
+    width: 200px;
+    height: auto;
+    margin-right: 10px;
+}
+
+/* Video Background Styles */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-frame {
+    width: 100vw;
+    height: 56.25vw;
+    min-height: 100vh;
+    min-width: 177.77vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.video-container {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+.video-container iframe {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+/* Photo Grid Styles */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.photo-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Social Links Styles */
+.social-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
+
+
+/* Footer */
+footer {
+    background-color: lightgray;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Image Header */
+.image-header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #FF69B4;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Image Gallery Container */
+.image-gallery-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #FFF6E0;
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+
+/* Image Gallery Images */
+.image-gallery img {
+    width: 200px;
+    height: auto;
+    margin-right: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="video-background">
+    <iframe class="video-frame" src="https://www.youtube.com/embed/MnFRWNSWDWc?autoplay=1&mute=1&controls=0&showinfo=0&loop=1&playlist=MnFRWNSWDWc" title="Heart Tunnel💖Pink Heart Background | Neon Heart Background Video Loop [3 Hours]-4K" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<header>
+    <h1><p>&#128150;Welcome to My Profile&#128150;</p></h1>
+</header>
+
+
+<nav>
+    <ul><h3>
+        <li><a href="Homepage.html">Home</a></li>
+        <li><a href="About me.html">About Me</a></li>
+        <li><a href="https://www.tiktok.com/@strikersmileyjade">Tiktok</a></li>
+        <li><a href="https://www.facebook.com/Jade.Ricafort6">Facebook</a></li>  
+    </h3></ul>
+</nav>
+
+
+
+
+<div class="container">
+    <div class="main-content">
+        <h2><center>Introducing Me</center></h2>
+        <figure class="image-with-caption">
+
+<img class="main-image" src="https://scontent.fmnl9-3.fna.fbcdn.net/v/t39.30808-6/399115137_7094746507257938_1795423301858957896_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=9c7eae&_nc_eui2=AeFV_zrvnC7HOafGNLTzMq2ls8B2mtwpRM2zwHaa3ClEzbuLn6za9qhl45CHoq9OIreKsF8zneyldRTwM9RbdkxM&_nc_ohc=0WkdB6LVjtYAX-EHtzO&_nc_ht=scontent.fmnl9-3.fna&oh=00_AfDmdbMc155eg5aUvfuE7O9XeM-lDPGIL20pWcMHeFePuA&oe=65771E4C" alt="My name is Rosella Jade A. Ricafort, the 1st-Year Representative of TACTICS." width="400" height="400">
+
+<figcaption>
+<h3><u>My name is Rosella Jade A. Ricafort, the 1st-Year Representative of TACTICS.</u></h3>
+</figcaption>
+
+<figcaption><h4>
+"I am currently studying at Ateneo de Naga University, pursuing a Bachelor's degree in Computer Science. To learn more about me, click on the 'About Me' section in the navigation bar at the top."
+</h4></figcaption>
+</figure>
+
+<hr>
+<div class="photo-grid">
+
+<p><center><h2>My Gallery</h2></center></p>
+
+
+	<img class="photo-item" src="https://scontent.fmnl9-2.fna.fbcdn.net/v/t39.30808-6/395115692_7045818648817391_7361030717042002463_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=adbe16&_nc_eui2=AeE2npD47jcpiFgspK2l0WbRyxE9KyWVksrLET0rJZWSysHozmolPT_QIyfK9R1Xsn12pfqZALHhoqSBiPSvx3X9&_nc_ohc=mb_npnI2AJ0AX-HJeHx&_nc_ht=scontent.fmnl9-2.fna&oh=00_AfDMxSQbDHyBbKmOdqsN3J-aYOBOlGhKOrQxipi4082YYw&oe=6577FF05" alt="Photo 1">
+
+
+	<img class="photo-item" src="https://scontent-mnl1-2.xx.fbcdn.net/v/t39.30808-6/395729569_7050289581703631_5587151653699082781_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=adbe16&_nc_eui2=AeHITYc1EL1ehAzqf9CRx1RYtdlPLIL4iEa12U8sgviIRs7-cK5Spj5sskbL2lezdrgXJOaALDguvaxbuwDtYFYB&_nc_ohc=5OWulgvb-ZwAX8b9dYU&_nc_ht=scontent-mnl1-2.xx&oh=00_AfBz-NoxI6vQmqP6wN5GK0oiUepICdcGLYfkf_KDpm1znA&oe=6578F270" alt="Photo 2">
+
+
+  	<img class="photo-item" src="https://scontent.fmnl9-2.fna.fbcdn.net/v/t39.30808-6/396395791_7060470414018881_911863677876971087_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=adbe16&_nc_eui2=AeFsrlliodE0qP4CUPTfYnYkmmo6SPjol_maajpI-OiX-XEpbTGzPM0xgsLCaDyYdLh_3v_snlBWmSKFpUIHgIoE&_nc_ohc=BY8PTOCooo8AX_GGgBR&_nc_oc=AQmRUf1cHDFxFwkIBwKZXtK5E8g7zcfYgCuFZPA5WoRLGgNDjEMPLboZiM6gmHRV9b1eLeHSyWeltIRr8yuMrerE&_nc_ht=scontent.fmnl9-2.fna&oh=00_AfDgO3jY8nsY-ybfkBHdhSxfrxDpfxHgyfjuHgMs2Ez9fQ&oe=65787929" alt="Photo 3">
+
+
+	<img class="photo-item" src="https://scontent-mnl1-2.xx.fbcdn.net/v/t39.30808-6/363408522_6770090576390201_6759327639777123429_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=adbe16&_nc_eui2=AeFyJ-ZoljNukh6NvaOaWJ-c8fpa6C_m7s_x-lroL-buz5UY2jp_eG7j5TocVKDsvHIcfaDk2hgEOZXnn2AClUyI&_nc_ohc=6K9y5yNdUw8AX8mEmZs&_nc_ht=scontent-mnl1-2.xx&oh=00_AfCk7hfbtd9G5nhdZdNOgL7dc4GKLkJP1afQQ-Kp40RfBQ&oe=65790852" alt="Photo 4">
+
+<img class="photo-item" src="https://scontent.fceb6-1.fna.fbcdn.net/v/t39.30808-6/354450769_6590804710985456_838009061719125901_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=adbe16&_nc_eui2=AeHzPuTxd0dEUYSq0KEHE5MrvmQyfeVdMtu-ZDJ95V0y2zK4-ID0UhAMPkOeyHlN6XjClCyMHsFSgaPh-4tlnyxz&_nc_ohc=MvsMUgixA3YAX9PLC8Z&_nc_ht=scontent.fceb6-1.fna&oh=00_AfAanhDXcnjyreghJ74x0emhTrOwUlbuDUpTZ31RYj3AIg&oe=65791906" alt="Photo 5">
+
+	<img class="photo-item" src="https://scontent.fmnl9-3.fna.fbcdn.net/v/t39.30808-6/364071733_6775220262543899_4554505960446349011_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=adbe16&_nc_eui2=AeF4Vzr0fO7yLJxxXZKMJrhaBpgc55dTKIEGmBznl1MogQeKdCkM0ZEEi9CHXILutFrGYuC2OrGdcnxkEZsDWaJg&_nc_ohc=ZWHi1fgufRsAX-kSsJJ&_nc_ht=scontent.fmnl9-3.fna&oh=00_AfAmYacY1rRXhGCWb8WigmrtDFULcARwGwM7a5j8fZoTkQ&oe=65773C09" alt="Photo 6">
+
+
+	<img class="photo-item" src="https://scontent.fmnl9-4.fna.fbcdn.net/v/t39.30808-6/404736677_7186461008086487_3932737693479557195_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=adbe16&_nc_eui2=AeEla1h3rz_Qj0ldWRyOhlZuEijzosVeQgMSKPOixV5CA0HXYdw5qqMLLauVkDJnGT1Ri2s0rDillEVICzsVBYt7&_nc_ohc=vVpwt84EL4wAX_tnewq&_nc_ht=scontent.fmnl9-4.fna&oh=00_AfCX0rbfRORIlFsd7rvhH-3WFz-mPvkpTy_PCHNLEEY1cw&oe=6578A7BA" alt="Photo 7">
+
+
+	<img class="photo-item" src="https://scontent.fmnl4-5.fna.fbcdn.net/v/t39.30808-6/331124982_6394642450545922_4793663281522646405_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=adbe16&_nc_eui2=AeEW_Um25P9LJ_RSbntMk-zpc2wFz1N9w7RzbAXPU33DtKumSDvRiAZrcFHNrN8ZetE5jlssgrwIJiAW7ULLnU7g&_nc_ohc=JFFP93sBMzgAX-Ie-C-&_nc_ht=scontent.fmnl4-5.fna&oh=00_AfBurmW0MrCNjXKXVa5gCWBWiH0M5VYHjN0sNilxfVL-QA&oe=6577C7D3" alt="Photo 8">
+
+
+	<img class="photo-item" src="https://scontent-mnl1-2.xx.fbcdn.net/v/t39.30808-6/401417909_7126510957414826_7487056161205263403_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=adbe16&_nc_eui2=AeH9uTHZ1EewaIYwVHF9sZjoSm-mcm53055Kb6ZybnfTnl_EiL-2gT_DyPh4Q9hVvY3gm2hmcpDxu-_M0G5E9-UC&_nc_ohc=CTpaPZpYt8kAX83qEP-&_nc_ht=scontent-mnl1-2.xx&oh=00_AfAOjr2C2mm4Q2MwUHIGKohk_03B8dEoMtfj2oXt54b1Ow&oe=65778986" alt="Photo 9">
+
+
+</div>
+
+<hr>
+
+       
+ 	<div class="social-links">
+ 		<h2>Check out my social media</h2>
+        		<a href="https://www.facebook.com/Jade.Ricafort6">Facebook</a>
+        		<a href="https://www.twitter.com/strikersmiley">Twitter</a>
+        		<a href="https://www.instagram.com/jadiellarose">Instagram</a>
+			<a href="https://www.tiktok.com/@strikersmileyjade">Tiktok</a>
+    	</div>
+
+
+<div class="video-container">
+    <iframe
+        class="youtube-video"
+        src="https://www.youtube.com/embed/t-eJJSVxpeA?autoplay=1&mute=1&controls=0&loop=1&playlist=t-eJJSVxpeA"
+        frameborder="0"
+        allowfullscreen
+    ></iframe>
+
+</div>
+</div>
+
+    <div class="sidebar">
+        <h3>What I love to do!</h3>
+        	<figure class="image-with-caption">
+            		<img class="hobby-image" src="https://play-lh.googleusercontent.com/wRXSrwwbzBBlTpowK6onSs3rfBV-4nqVvLJJ7yAZa7jzdGNHpHH2hDhKCyKWj_3nqw" alt="Mobile Legends">
+
+            <figcaption>Playing Mobile Legends</figcaption>
+
+        </figure>
+        
+
+
+
+ <figure class="image-with-caption">
+            <img class="hobby-image" src="https://scontent.fmnl9-4.fna.fbcdn.net/v/t39.30808-6/396705150_7062468510485738_8965412535393149911_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a73e89&_nc_eui2=AeGRpsucyk79vQ9MGvEGT8L_nsS9dbleouyexL11uV6i7BVYjQ90Q91sRzv555NxWffufUkOh8RiHdzXGes5GbY0&_nc_ohc=2-GIIcVxQuoAX9nHffv&_nc_ht=scontent.fmnl9-4.fna&oh=00_AfCCHr3CjkSLXzNqEEWCtjk2SrrqJXA43vT-rwGy2DLO2g&oe=6578DB1E" alt="Cosplay">
+            <figcaption>Doing Cosplays</figcaption>
+        </figure>
+
+ <figure class="image-with-caption">
+            <img class="hobby-image" src="https://scontent.fwnp1-1.fna.fbcdn.net/v/t1.6435-9/51668699_375085203291647_2685890612103741440_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=dd63ad&_nc_eui2=AeF1WE1MFMpc8of4-hBxuxXcd69lk8gA18J3r2WTyADXwp7CAVSitl-nfQVBL-N1H3yBYX6Lj3AiGwB3ueY795xd&_nc_ohc=HWjC81kA9AkAX_rCGuQ&_nc_ht=scontent.fwnp1-1.fna&oh=00_AfAaoXzGc2THZD1EvMGmsytKB72j2zUn1c3UmGA3v1quhg&oe=6587E6DA" alt="travelling">
+            <figcaption>Travelling</figcaption>
+        </figure>
+
+<figure class="image-with-caption">
+            <img class="hobby-image" src="https://scontent.fwnp1-1.fna.fbcdn.net/v/t1.6435-9/50618234_2192353154163989_6274101776618618880_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=2be8e3&_nc_eui2=AeEcI9ddGDSez0kTCM6FLu3CMrALf25IzIMysAt_bkjMg3Q6moTjfjEqWxIqQbsYyxhn1oJKMQ6dGtZfcDj8FlWU&_nc_ohc=5EqKDZ2bxQ8AX8xKsmF&_nc_ht=scontent.fwnp1-1.fna&oh=00_AfCpPKfY1ptvu9-TUg5eVzzaqvPRtgdRzJO6-AqBNRV-hA&oe=6587E45C" alt="Dancing">
+            <figcaption>Dancing</figcaption>
+        </figure>
+
+<figure class="image-with-caption">
+            <img class="hobby-image" src="https://scontent-mnl1-2.xx.fbcdn.net/v/t39.30808-6/277460739_5237163109682963_2727540746995823191_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=9534ce&_nc_eui2=AeH_WknnatETUwv96vRcndKdouAGDLSnxZCi4AYMtKfFkMwRKJ7y0wExJ6qMvkYg1r12yRlVEFHzUo2BICtI01l0&_nc_ohc=9_DjkfCa0ssAX-v9HXm&_nc_ht=scontent-mnl1-2.xx&oh=00_AfAD-QptknXq3T83lam4H4mCJucRozn6oEa6M3sq6Fmnqg&oe=65782831" alt="Editing Videos">
+            <figcaption>Editing Videos & Pics</figcaption>
+        </figure>
+
+<figure class="image-with-caption">
+            <img class="hobby-image" src="https://tse2.mm.bing.net/th?id=OIP.wUgVutbBUpa1o68wNFKM2AHaEo&pid=Api&P=0&h=220" alt="Music">
+            <figcaption>Listening to Music</figcaption>
+        </figure>
+
+<figure class="image-with-caption">
+            <img class="hobby-image" src="https://news.unl.edu/sites/default/files/media/microphone_sing_stage.jpg" alt="singing">
+            <figcaption>Singing</figcaption>
+        </figure>
+
+<figure class="image-with-caption">
+            <img class="hobby-image" src="https://www.minecraft.net/content/dam/games/minecraft/key-art/PC_Bundle_BaseGame_Mobile.jpg?imwidth=321" alt="minecraft">
+            <figcaption>Building in Minecraft</figcaption>
+        </figure>
+
+
+
+
+
+    </div>
+</div>
+
+
+
+
+<div class="image-header">
+    <h2>More Photos</h2>
+</div>
+<div class="image-gallery-container">
+
+    <img src="https://scontent-mnl1-2.xx.fbcdn.net/v/t39.30808-6/408676367_7213244495408138_7877547413977569990_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=783fdb&_nc_eui2=AeH7N1_wBmRqkRl8v1oVVvgfx0JOyXRVO-HHQk7JdFU74fo3mhkobCU-WTTpcKyEcwDWSgIt9IolyyBa1W_Q_jQ3&_nc_ohc=m7xO60nXOGEAX9m-pY2&_nc_ht=scontent-mnl1-2.xx&oh=00_AfC1ls9eodqFXrTCTx3EYqiHSu06G_k43YO3ob20sJGeyw&oe=6577E1D0" alt="Image 1"width="200" height="200">
+
+    <img src="https://scontent.fmnl9-3.fna.fbcdn.net/v/t39.30808-6/380656584_6922963937769530_9208836424468885566_n.jpg?stp=cp6_dst-jpg&_nc_cat=100&ccb=1-7&_nc_sid=9534ce&_nc_eui2=AeHuAu_mGID8AAxbEorUE-tfQT0X0kvTFRFBPRfSS9MVEWs_jxg8XJurelFlOP41vUVN7y6GkGUHzKy5zawW3PrL&_nc_ohc=cSxiMf7Gd6MAX-J9BxA&_nc_ht=scontent.fmnl9-3.fna&oh=00_AfDvKMkZc82U73euXftKqT7o8nq5gCkYnFGtoISr3MCjjA&oe=6578A7D3" alt="Image 2"width="300" height="200">
+
+    <img src="https://scontent.fmnl9-3.fna.fbcdn.net/v/t39.30808-6/351174873_1501788767024758_2062461827657303589_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=9534ce&_nc_eui2=AeF8OCNdzp04z6zJ_avicpWqWn9X_BH9fplaf1f8Ef1-macsOAz1GNiBn1Nc-s_lfxO4qg4ObcMWIHvYfuRcgMZo&_nc_ohc=kVnWGCPxF6sAX_7hbst&_nc_ht=scontent.fmnl9-3.fna&oh=00_AfCf33Z8TxbeLZANh2O7zTek1utyqP2ksmvxQfTWwsj1gA&oe=6578A8F6" alt="Image 3"width="300" height="200">
+
+    <img src="https://scontent-mnl1-2.xx.fbcdn.net/v/t39.30808-6/396922798_7072602182805704_9134950289433927987_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a73e89&_nc_eui2=AeGlOkFZUn4Fkvo4s4N8AJfU7tfItIBkmP3u18i0gGSY_RmCg15E7otQrU4Gqd1lR-eRLk-1q3-MMZ7CniO8QgCc&_nc_ohc=SFcwHvEDTLEAX_cEEl1&_nc_ht=scontent-mnl1-2.xx&oh=00_AfDBB3GkN9_HGPEct2qnAQ3cHxwhHT_y27BHRXDd_IJcbw&oe=65778BFA" alt="Image 4"width="400" height="200">
+
+    <img src="https://scontent.fwnp1-1.fna.fbcdn.net/v/t1.6435-9/74242382_534624177337748_8738956140261408768_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=2be8e3&_nc_eui2=AeE1MCvTdy6v-bg0yXGF0kMeK0rMBMKeZFErSswEwp5kUWUlHtgGH9gzYv6zV2GyGZ5g9drRKkKfAfupILfRcQTh&_nc_ohc=NbX3dXY05jAAX-bmNYC&_nc_oc=AQnnzDIJKfdVOmBjDZxmytDjFd8XGZ7cmtO3IcyQFDYk1eohDdxksZ538pZfHa1vw9Q&_nc_ht=scontent.fwnp1-1.fna&oh=00_AfDhx9-ZJ3tanqgxJypWnVQrNqC2WYva1r2COS0d0h12Og&oe=6587CCD6" alt="Image 6"width="300" height="200">
+
+    <img src="https://scontent.fwnp1-1.fna.fbcdn.net/v/t1.6435-9/62378161_2217250908344253_789320877681410048_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=dd63ad&_nc_eui2=AeEwV66chgkd0vc1BDI8sMalpCwUbt9gToykLBRu32BOjBhZO7HiqSyL2XT-AMD_QJYMblO6S2gQFlbym_-p6CQM&_nc_ohc=xmrGG6_Nb0EAX_KloFO&_nc_ht=scontent.fwnp1-1.fna&oh=00_AfBtId1jyU3s0ndPGEBGwquimdFZqjIIwpAnFMNVaFxBQw&oe=6587CB4C" alt="Image 7"width="300" height="200">
+
+    <img src="https://scontent.fwnp1-1.fna.fbcdn.net/v/t1.6435-9/62374689_2448255805403704_7330295931910225920_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=73878a&_nc_eui2=AeEbTa8NruZzFhs1o0ZoVltKJZrW_c03WMglmtb9zTdYyB8R3MEU4NAjSOG8gwXrEappqRYctUyOdUcMkANGqfyX&_nc_ohc=AqZCmZfQXPsAX_jRU97&_nc_ht=scontent.fwnp1-1.fna&oh=00_AfCDssC9PX5wGhoka7Wl8RkOQPgSJ_UJdyB8Q4BKg_okNg&oe=6587C507" alt="Image 8"width="200" height="200">
+
+    <img src="https://scontent.fwnp1-1.fna.fbcdn.net/v/t1.6435-9/52596156_2551722274856096_5466602290943098880_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=dd63ad&_nc_eui2=AeFTSSc_d-YnFQoEGZGzuSfFAGnhFBYpMlMAaeEUFikyU4bWBduj_ovxv5PWS9fgINv55vQXz2s_QhEHLeXdMJaJ&_nc_ohc=nPt6rpGMdaQAX9rPp1O&_nc_ht=scontent.fwnp1-1.fna&oh=00_AfD5JzOSFLYU364VS_xL0z-8K1iCwRvmjxjZWjbiJ3aJhQ&oe=6587C3DE" alt="Image 9"width="300" height="200">
+</div>
+
+
+
+
+
+<footer>
+    <p>&copy; 2023 MyWorld.com. All Rights Reserved.</p>
+</footer>
+
+
+
+</body>
+</html>
+
