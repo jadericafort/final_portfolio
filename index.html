@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration and Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            overflow: hidden;
+            background-image: url('https://i.pinimg.com/736x/88/87/69/888769a7982839d555e2ad1ed6903cb5.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 10px;
+            background-color: black;
+            width: 100%;
+            padding: 20px 0;
+            color: white;
+        }
+
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-container {
+            width: 80%;
+            max-width: 300px; 
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .form-container:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="submit"] {
+            width: calc(100% - 20px); 
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #E1BEE7;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #C080C0;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        p a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        #registrationForm {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Welcome to My World</h1>
+    </nav>
+
+    <div class="container">
+        <div class="form-container" id="loginForm">
+            <h2>Login</h2>
+            <form id="loginFormFields">
+                <input type="text" name="username" placeholder="Username/Email"><br>
+                <input type="password" name="loginPassword" placeholder="Password"><br>
+                <input type="submit" value="Login" id="loginButton">
+            </form>
+            <p>Not registered yet? <a href="#" id="showRegisterForm"><font color="blue">Sign Up</font></a></p>
+        </div>
+
+        <div class="form-container" id="registrationForm">
+            <h2>Registration Form</h2>
+            <form id="registerForm">
+                <input type="text" name="name" placeholder="Name"><br>
+                <input type="email" name="email" placeholder="Email"><br>
+                <input type="password" name="password" id="password" placeholder="Password"><br>
+                <input type="password" name="confirmPassword" placeholder="Confirm Password"><br>
+                <input type="submit" value="Register">
+            </form>
+            <p>Already registered? <a href="#" id="showLoginForm"><font color="blue">Login</font></a></p>
+        </div>
+    </div>
+
+    <script>
+        const users = [
+    		{ username: 'jade', password: '523306' },
+    		{ username: 'rosella', password: '1234' },
+	];
+
+	const registerForm = document.getElementById("registrationForm");
+	const loginForm = document.getElementById("loginForm");
+	const showRegisterLink = document.getElementById("showRegisterForm");
+	const showLoginLink = document.getElementById("showLoginForm");
+	const loginButton = document.getElementById("loginButton");
+
+	loginForm.style.display = "block";
+
+	showRegisterLink.addEventListener("click", function(event) {
+    		event.preventDefault();
+    		registerForm.style.display = "block";
+    		loginForm.style.display = "none";
+	});
+
+	showLoginLink.addEventListener("click", function(event) {
+    		event.preventDefault();
+    		loginForm.style.display = "block";
+    		registerForm.style.display = "none";
+	});
+
+	loginButton.addEventListener("click", function(event) {
+    		event.preventDefault();
+    			const username = document.getElementsByName('username')[0].value;
+    			const password = document.getElementsByName('loginPassword')[0].value;
+
+    	const user = users.find(user => user.username === username && user.password === password);
+
+    	
+	if (user) {
+        	alert("Login successful!");
+       		window.location.href = "Homepage.html";
+    	} 
+
+	else {
+        	alert("Invalid username or password. Please try again.");
+   	}
+	
+	});
+
+    </script>
+</body>
+</html>
